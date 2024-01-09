@@ -1,0 +1,94 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      
+      <ion-button  (click)="logout()">
+        <ion-icon name="log-in-outline" style="color: white; font-size: 27px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div id="header">
+    <h3 style="font-family: 'Poppins', sans-serif">ADMIN RT.05</h3>
+    <div class="container">
+      <p>Ca Kode Pengeluaran :</p>
+      <div class="search-bar-container">
+        <ion-searchbar
+          search-icon="search-circle"
+          show-clear-button="never"
+          value="Never Show"
+          placeholder="Search"
+          [(ngModel)]="searchNIK"
+        ></ion-searchbar>
+        <ion-button class="search" (click)="searchByNIK()">Cari</ion-button>
+      </div>
+    </div>
+  </div>
+  <h3
+    style="
+      color: #739072;
+      font-weight: 500;
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      margin-left: 18px;
+      margin-bottom: 10px;
+      margin: 0 8px 8px 12px; /* Sesuaikan margin sesuai kebutuhan */
+      
+      
+    "
+  >
+    Pengeluaran
+  </h3>
+  <!-- <div class="text"  style="display: flex; align-items: center; ">
+    <h3
+    style="
+      color: #739072;
+      font-weight: 500;
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      margin-left: 18px;
+      margin-bottom: 10px;
+      margin: 0 8px 8px 12px; /* Sesuaikan margin sesuai kebutuhan */
+      
+      
+    "
+  >
+    Pengeluaran
+  </h3>
+  <ion-buttons slot="end"  style="margin-left: auto;">
+    <ion-button class="bordered" fill="solid" >
+      <ion-icon name="bar-chart-outline"></ion-icon>
+    </ion-button> 
+    <ion-button class="bordered" fill="solid">
+      <ion-icon name="download-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  </div> -->
+  <ion-card class="form" *ngFor="let data of Data">
+    <ion-card-content>
+      <div class="content">
+        <img class="icon" src="/assets/image/profits.png" alt="icon.chat" />
+        <h4 class="name">{{ data.kd_pengeluaran}}</h4>
+      </div>
+      <h4><span>Nama Pengeluaran : </span>{{ data.nama_pengeluaran}}</h4>
+      <ion-button
+        style="--background: #739072; color: white; width: 68%; text-align: center; border-radius: 10%; margin-right: 28px;"
+        (click)="edit(data.kd_pengeluaran)"
+        ><i class="bi bi-pencil-square"></i>Edit Data </ion-button
+      >
+      <ion-button class="del" style="--background: white; color:red; width: 18%; text-align: center;" (click)="confirmDelete(data.kd_pengeluaran)"
+        ><ion-icon name="trash-outline"></ion-icon></ion-button
+      >
+    </ion-card-content>
+  </ion-card>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button style="--background: #739072" routerLink="/t-pengeluaran">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-content [fullscreen]="true">
+  <div class="nav">
+    <ion-icon
+      name="arrow-back-outline"
+      (click)=" goToSuratPage()"
+    ></ion-icon>
+    <ion-title class="profile">Tambah Surat keluar</ion-title>
+  </div>
+  <div class="container d-block justify-content-center py-3">
+    <ion-title class="edit"> Nomor Induk Kependudukan :</ion-title>
+    <ion-item>
+      <ion-input  type="text" placeholder="Masukan Kode penduduk"  [(ngModel)]="kd_penduduk"></ion-input>
+    </ion-item>
+    <ion-title class="edit"> Nomor Surat :</ion-title>
+    <ion-item>
+      <ion-input  type="email" placeholder="Masukan Nomor surat" [(ngModel)]="nomor_surat"></ion-input>
+    </ion-item>
+    <ion-title class="edit"> Keterangan :</ion-title>
+    <ion-item>
+      <ion-input  type="text" placeholder="Masukan Keterangan" [(ngModel)]="keterangan"></ion-input>
+    </ion-item>
+    <ion-title class="edit"> Tanggal Surat:</ion-title>
+    <ion-item>
+      <ion-input  type="date" placeholder="Masukan tanggal" [(ngModel)]="tanggal_surat"></ion-input>
+    </ion-item>
+    <div class="form-group mt-3">
+      <ion-button (click)="addNewSurat()">Tambah User</ion-button>
+    </div>
+  </div>
+</ion-content>

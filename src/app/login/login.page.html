@@ -1,0 +1,34 @@
+<ion-content class="ion-padding">
+  <img src="/assets/image/vektor1.png" alt="" />
+  <h1>Login,</h1>
+  <h3>Sign in to continue!</h3>
+
+  <ion-item>
+    <ion-icon name="person"></ion-icon>
+    <ion-input [(ngModel)]="username" placeholder="Masukan Nik" class="input" />
+  </ion-item>
+  <ion-item>
+    <ion-icon name="lock-closed"></ion-icon>
+    <ion-input
+      [(ngModel)]="password"
+      class="form-control p-2 py-0"
+      placeholder="Masukan Password"
+      [type]="passwordType"
+      clearOnEdit="false"
+      required
+      class="input"
+    />
+  </ion-item>
+  <ion-toggle [enableOnOffLabels]="true" (click)="hideShowPassword()"  color="success">View Password</ion-toggle>
+  <ion-button expand="block" shape="round" (click)="login()">Masuk</ion-button>
+  <!-- <p class="footer-text">
+    Don't have account?, <span (click)="register()">Sign Up</span>
+  </p> -->
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="title-footer"
+      >Copyright © Greenland Forest Hill 2024</ion-title
+    >
+  </ion-toolbar>
+</ion-footer>

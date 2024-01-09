@@ -1,0 +1,157 @@
+<ion-content [fullscreen]="true">
+  <div class="nav">
+    <ion-icon
+      name="arrow-back-outline"
+      [routerLink]="['/penduduk']"
+    ></ion-icon>
+    <ion-title class="profile">Tambah Data</ion-title>
+  </div>
+  <div class="container d-block justify-content-center py-3">
+    <ion-title class="edit">NIK :</ion-title>
+    <ion-item>
+      <ion-input [(ngModel)]="nik" placeholder="Masukan NIK"></ion-input>
+    </ion-item>
+    <ion-title class="edit">KK :</ion-title>
+    <ion-item>
+      <ion-input [(ngModel)]="kk" placeholder="Masukan KK"></ion-input>
+    </ion-item>
+    <ion-title class="edit">Nama :</ion-title>
+    <ion-item>
+      <ion-input [(ngModel)]="nama" placeholder="Masukan Nama"></ion-input>
+    </ion-item>
+    <ion-title class="edit">Tempat Lahir :</ion-title>
+    <ion-item>
+      <ion-input
+        [(ngModel)]="tmpt_lhr"
+        placeholder="input Tempat Lahir"
+      ></ion-input>
+    </ion-item>
+    <ion-title class="edit">Tanggal Lahir :</ion-title>
+    <ion-item>
+      <ion-input
+        [(ngModel)]="tgl_lhr"
+        type="date"
+        placeholder="input Tanggal Lahir"
+      ></ion-input>
+    </ion-item>
+    <ion-list>
+      <ion-title class="edit">Jenis kelamin :</ion-title>
+      <ion-item>
+        <ion-select [(ngModel)]="jk" placeholder=" pilih jenis kelamin">
+          <ion-select-option value="L">Pria</ion-select-option>
+          <ion-select-option value="P">Wanita</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-title class="edit">Pilih Agama :</ion-title>
+      <ion-item>
+        <ion-select [(ngModel)]="agama" placeholder="Agama">
+          <ion-select-option value="Islam">Islam</ion-select-option>
+          <ion-select-option value="Kristen">Kristen</ion-select-option>
+          <ion-select-option value="Budha">Budha</ion-select-option>
+          <ion-select-option value="Hindu">Hindu</ion-select-option>
+          <ion-select-option value="Konghucu">Konghucu</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-title class="edit">Status Pernikahan :</ion-title>
+      <ion-item>
+        <ion-select [(ngModel)]="stts_prkwn" placeholder="Status Pernikahan">
+          <ion-select-option value="Menikah">Menikah</ion-select-option>
+          <ion-select-option value="Belum Menikah"
+            >Belum Menikah</ion-select-option
+          >
+          <ion-select-option value="Janda">Janda</ion-select-option>
+          <ion-select-option value="Duda">Duda</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-title class="edit">Status Keluarga :</ion-title>
+      <ion-item>
+        <ion-select [(ngModel)]="stts_klrg" placeholder="Status Keluarga">
+          <ion-select-option value="Kepala Keluarga"
+            >Kepala Keluarga</ion-select-option
+          >
+          <ion-select-option value="Istri">Istri</ion-select-option>
+          <ion-select-option value="Anak">Anak</ion-select-option>
+          <ion-select-option value="Orang Tua">Orang Tua</ion-select-option>
+          <ion-select-option value="Saudara">Saudara</ion-select-option>
+          <ion-select-option value="ART">ART</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-title class="edit">Status Pekerjaan :</ion-title>
+      <ion-item>
+        <ion-select [(ngModel)]="stts_pkrjan" placeholder="Status Pekerjaan">
+          <ion-select-option value="PNS">PNS</ion-select-option>
+          <ion-select-option value="Karyawan Swasta"
+            >Karyawan Swasta</ion-select-option
+          >
+          <ion-select-option value="Dosen">Dosen</ion-select-option>
+          <ion-select-option value="Guru">Guru</ion-select-option>
+          <ion-select-option value="Wiraswasta">Wiraswasta</ion-select-option>
+          <ion-select-option value="Mengurus Rumah Tangga"
+            >Mengurus Rumah Tangga</ion-select-option
+          >
+          <ion-select-option value="Pelajar/Mahasiswa"
+            >Pelajar/Mahasiswa</ion-select-option
+          >
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-title class="edit">Status Kewarganegaraan :</ion-title>
+      <ion-item>
+        <ion-select
+          [(ngModel)]="stts_kwngn"
+          placeholder="Status Kewarganegaraan"
+        >
+          <ion-select-option value="WNI">WNI</ion-select-option>
+          <ion-select-option value="WNA">WNA</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-title class="edit">Status Kavling :</ion-title>
+      <ion-item>
+        <ion-select
+          [(ngModel)]="stts_kvlng"
+          placeholder=" pilih status kavling"
+        >
+          <ion-select-option value="Pemilik">Pemilik</ion-select-option>
+          <ion-select-option value="Kontrak">Kontrak</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-title class="edit">Kode Blok :</ion-title>
+      <ion-item>
+        <ion-select [(ngModel)]="kd_blok" placeholder="pilih kode blok">
+          <ion-select-option *ngFor="let blok of Blok" value="{{blok.kd_blok}}"
+            >{{blok.nama_blok}} - {{blok.no_blok}}</ion-select-option
+          >
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-title class="edit">Status NIK:</ion-title>
+      <ion-item>
+        <ion-select [(ngModel)]="stts_nik" placeholder="Pilih Status NIK">
+          <ion-select-option value="GFH">GFH</ion-select-option>
+          <ion-select-option value="LUAR">LUAR</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-title class="edit">Tanggal Masuk :</ion-title>
+    <ion-item>
+      <ion-input [(ngModel)]="tgl_msk"  placeholder="Masukan Tanggal Masuk"  type="date"></ion-input>
+    </ion-item>
+    <div class="form-group mt-3">
+      <ion-button (click)="Insert()">Tambah Data</ion-button>
+    </div>
+  </div>
+</ion-content>

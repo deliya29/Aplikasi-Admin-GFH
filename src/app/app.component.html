@@ -1,0 +1,46 @@
+<ion-app>
+  
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay" class="custom-menu" >
+      <ion-content>
+        <div align-items="left" class="avatar-container">
+          <ion-avatar align="center">
+            <img src="/assets/image/daun.png" />
+          </ion-avatar>
+        </div>
+
+        <div align="right" class="username-container">
+          <h4>GREENLAND</h4>
+          <!--{{s_name}}-->
+        </div>
+        <div class="line-text">
+          <span class="lines"></span>
+        </div>
+        <ion-list id="inbox-list" class="menu-list">
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item
+              routerDirection="root"
+              [routerLink]="[p.url]"
+              lines="none"
+              detail="false"
+              routerLinkActive="selected"
+            >
+              <ion-icon
+                aria-hidden="true"
+                slot="start"
+                [ios]="p.icon + '-outline'"
+                [md]="p.icon + '-outline'"
+                class="tulisan"
+              ></ion-icon>
+              <b class="tulisan">{{ p.title }}</b>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+        <div class="line-text">
+          <span class="lines"></span>
+        </div>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

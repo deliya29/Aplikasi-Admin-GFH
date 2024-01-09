@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;1,700&family=Sacramento&family=Tangerine:wght@400;700&family=Work+Sans:wght@100;400;600&display=swap");
+ion-header {
+  --background: #739072;
+  border: none;
+  ion-menu-button {
+    color: #fff;
+  }
+
+  ion-toolbar,
+  ion-item {
+    --background: #739072;
+    padding: 0 10px;
+  }
+  .nama_apk {
+    font-size: 16px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+  }
+
+  ion-toolbar {
+    border: none;
+    .bordered {
+      --border-radius: 50%;
+    }
+  }
+  ion-icon {
+    color: #204431;
+  }
+  img{
+    width: 20px;
+  }
+  
+  
+}
+ion-content {
+  font-family: "Poppins", sans-serif;
+  --background:#f8f8f8;
+
+  #header {
+    background: #739072;
+    border-radius: 0 0 20px 20px;
+    color: #fff;
+    padding: 18px;
+    margin-bottom: 8%;
+  
+
+    ion-searchbar{
+    
+      --border-radius: 8px;
+      right: 2%;
+    }
+
+    .search-bar-container {
+      display: flex;
+      align-items: center;
+    }
+    .search {
+      --background: #ccc49f;
+      height: 45px;
+      width: 75px;
+      color: #fff;
+      font-family: sans-serif;
+      font-weight: bold;
+      --border-radius: 7px;
+      left: 10%;
+    }
+
+    p {
+      margin-bottom: 0.5%;
+      font-size: 16px;
+      font-family: sans-serif;
+      color: #ffff;
+    }
+    h3 {
+      margin-top: 2%;
+      margin-bottom: 3%;
+      color: #ffff;
+     font-weight: 500;
+    }
+
+    ion-icon {
+      color: #204431;
+    }
+  }
+
+  .form {
+    --background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 15px;
+    padding: 15px 10px;
+    margin-top: 12px;
+  }
+  .content{
+    display: flex;
+    
+  }
+  .icon{
+    width: 25px; /* Adjust the size as needed */
+  height: 25px; /* Adjust the size as needed */
+  background-color: #fff;
+  border-radius: 20%;
+
+  }
+  .name {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    margin-left: 10px;
+    font-family:'Poppins', sans-serif ;
+    color: #12181b;
+  }
+  h4 {
+    margin-top: 7px;
+    font-size: 16px;
+    font-family: 'Poppins',sans-serif;
+  }
+  .edit {
+    border-radius: 25%;
+  }
+  ion-fab {
+    top: 88%;
+  }
+ 
+}

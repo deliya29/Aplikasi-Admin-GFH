@@ -1,0 +1,87 @@
+ion-content {
+    margin-top: 7%;
+    font-family: sans-serif;
+    --background: #cfe0bf;
+    img {
+      top: none;
+      width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 3%;
+    }
+  
+    h1 {
+      margin-top: 2%;
+      margin-bottom: 10px;
+      font-size: 32px;
+      font-weight: 700;
+      font-family: sans-serif;
+    }
+  
+    h3 {
+      color: #8a95a0;
+      font-weight: 600;
+    }
+  
+    .input {
+      font-family: sans-serif;
+      font-weight: 15%;
+      margin-left: 4px;
+    }
+    ion-item {
+      --background: #e2e2e2;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.295);
+  
+      ion-input {
+        color: #050505;
+      }
+    }
+  
+    ion-button {
+      top: 8%;
+      height: 6%;
+      --background: #204431;
+      box-shadow: #7d868f;
+      font-family: sans-serif;
+      font-size: 100%;
+      font-weight: bold;
+    }
+  
+    ion-title {
+      font-family: "Poppins" sans-serif;
+      text-align: center;
+    }
+    .footer-text {
+      text-align: center;
+      font-size: 17px;
+      margin-top: 5%;
+      font-family: sans-serif;
+  
+      span {
+        text-decoration: none;
+        font-weight: bold;
+        color: #204431;
+        font-family: sans-serif;
+      }
+      span:hover {
+        color: #8a95a0;
+      }
+    }
+    ion-toggle{
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+  }
+  ion-toolbar,
+  ion-footer {
+    --background: #204431;
+    color: #e2e2e2;
+  }
+  .title-footer {
+    font-size: 15px;
+    text-align: center;
+  }
+  

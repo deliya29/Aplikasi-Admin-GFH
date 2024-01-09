@@ -1,0 +1,44 @@
+<ion-content [fullscreen]="true">
+  <div class="nav">
+    <ion-icon name="arrow-back-outline" [routerLink]="['/uang-keluar']"></ion-icon>
+    <ion-title class="profile">Uang Keluar </ion-title>
+  </div>
+  <div class="container d-block justify-content-center py-3">
+    <ion-title class="edit">Kode Pengeluaran:</ion-title>
+    <ion-item>
+      <ion-select [(ngModel)]="kd_pengeluaran" placeholder="pilih kode Pengeluaran">
+        <ion-select-option *ngFor="let pengeluaran of Pengeluaran" value="{{pengeluaran.kd_pengeluaran}}"
+          >{{pengeluaran.kd_pengeluaran}} - {{pengeluaran.nama_pengeluaran}}</ion-select-option
+        >
+      </ion-select></ion-item
+    >
+
+    <ion-title class="edit">Keterangan :</ion-title>
+    <ion-item>
+      <ion-input
+        [(ngModel)]="keterangan"
+        placeholder="Masukan Keterangan"
+        type="text"
+      ></ion-input>
+    </ion-item>
+    <ion-title class="edit">Tanggal Keluar:</ion-title>
+    <ion-item>
+      <ion-input
+        [(ngModel)]="tanggal_keluar"
+        placeholder="Masukan Tanggal Masuk"
+        type="date"
+      ></ion-input>
+    </ion-item>
+    <ion-title class="edit">Upload Bukti pembayaran :</ion-title>
+    <ion-item>
+      <ion-input
+        (change)="getFile($event)"
+        class="mt-2"
+        type="file"
+      ></ion-input>
+    </ion-item>
+    <div class="form-group mt-3">
+      <ion-button (click)="Insert()">Kirim</ion-button>
+    </div>
+  </div>
+</ion-content>

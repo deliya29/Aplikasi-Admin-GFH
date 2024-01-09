@@ -1,0 +1,7 @@
+{
+  "name": "admin-gfh",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

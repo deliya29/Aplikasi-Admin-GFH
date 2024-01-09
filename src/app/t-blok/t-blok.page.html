@@ -1,0 +1,29 @@
+<ion-content [fullscreen]="true">
+  <div class="nav">
+    <ion-icon
+      name="arrow-back-outline"
+      [routerLink]="['/blok']"
+    ></ion-icon>
+    <ion-title class="profile">Tambah Blok Kavling</ion-title>
+  </div>
+  <div class="container d-block justify-content-center py-3">
+    <ion-title class="edit">No Blok :</ion-title>
+    <ion-item>
+      <ion-input  type="text" placeholder="Masukan No Blok"  [(ngModel)]="no_blok"></ion-input>
+    </ion-item>
+    <ion-title class="edit">Nama Blok :</ion-title>
+    <ion-item>
+      <ion-input  type="text" placeholder="Masukan Nama Blok"  [(ngModel)]="nama_blok"></ion-input>
+    </ion-item>
+    <ion-title class="edit">Status  :</ion-title>
+    <ion-item>
+      <ion-select [(ngModel)]="status" placeholder=" pilih status">
+        <ion-select-option value="Aktif">Aktif</ion-select-option>
+        <ion-select-option value="Tidak Aktif">Tidak Aktif</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div class="form-group mt-3">
+      <ion-button (click)="addBlok()">Tambah Blok</ion-button>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,30 @@
+ion-content {
+  ion-list {
+      background: transparent;
+  }
+    font-family: "Poppins", sans-serif;
+    --background: url("/assets/image/bg-5.jpg") center center/cover;
+  
+}
+ion-footer {
+  ion-toolbar {
+      padding: 0 3px;
+      ion-textarea {
+          border: 1px solid var(--ion-color-medium);
+          border-radius: 20px;
+          margin: 0.5vh 0;
+      }
+     
+  }
+}
+.toolbar{
+  --background:#043724;
+}
+.text{
+  color: white;
+  font-size: 17px;
+}
+
+.icon{
+  --background:#043724;
+}

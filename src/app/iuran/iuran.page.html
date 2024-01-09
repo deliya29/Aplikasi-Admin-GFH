@@ -1,0 +1,74 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      
+      <ion-button  (click)="logout()">
+        <ion-icon name="log-in-outline" style="color: white; font-size: 27px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div id="header">
+    <h3 style="font-family: 'Poppins', sans-serif">ADMIN RT.05</h3>
+    <div class="container">
+      <p>Cari NIK Penduduk :</p>
+      <div class="search-bar-container">
+        <ion-searchbar
+          search-icon="search-circle"
+          show-clear-button="never"
+          value="Never Show"
+          placeholder="Search"
+          [(ngModel)]="searchNIK"
+        ></ion-searchbar>
+        <ion-button class="search" (click)="searchByNIK()">Cari</ion-button>
+      </div>
+    </div>
+  </div>
+  <h3
+  style="
+    color: #739072;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    margin-left: 18px;
+    margin-bottom: 10px;
+  "
+>
+  Data Iuran Warga
+</h3>
+<ion-refresher (ionRefresh)="handleRefresh($event)">
+  <ion-refresher-content></ion-refresher-content>
+</ion-refresher>
+    <ion-card class="form" *ngFor="let data of iuranData">
+      <ion-card-content>
+        <div class="content">
+          <img class="icon" src="/assets/image/salary.png" alt="icon.chat" />
+          <h4 class="name">{{ data.kd_penduduk }}</h4>
+        </div>
+        <h4><span>Pembayaran : </span>{{ data.jenis_pembayaran }}</h4>
+        <h4><span>Keterangan : </span>{{ data.keterangan }}</h4>
+        <h4><span>Status : </span>{{data.status}}</h4>
+        <ion-button
+          style="--background: #739072; color: white; width: 68%; text-align: center; border-radius: 10%; margin-right: 28px;"
+          (click)="edit(data.kd_iuran)"
+          ><i class="bi bi-pencil-square"></i>Edit Data </ion-button
+        >
+        <ion-button class="del" style="--background: white; color:red; width: 18%; text-align: center;" (click)="confirmDelete(data.kd_iuran)"
+          ><ion-icon name="trash-outline"></ion-icon></ion-button
+        >
+      </ion-card-content>
+    </ion-card>
+    <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+      <ion-fab-button style="--background: #739072" routerLink="/t-iuran">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    
+  </ion-content>
+  
+

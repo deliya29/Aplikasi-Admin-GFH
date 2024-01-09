@@ -1,0 +1,75 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      
+      <ion-button  (click)="logout()">
+        <ion-icon name="log-in-outline" style="color: white; font-size: 27px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" class="bg">
+  <div id="header">
+    <h3 style="font-family: 'Poppins', sans-serif">ADMIN RT.05</h3>
+    <div class="container">
+      <p>Cari Tanggal :</p>
+      <div class="search-bar-container">
+        <ion-searchbar
+          search-icon="search-circle"
+          show-clear-button="never"
+          type="date"
+          
+          [(ngModel)]="searchTanggal"
+        ></ion-searchbar>
+        <ion-button class="search"  (click)= searchByTanggal()>Cari</ion-button>
+      </div>
+    </div>
+  </div>
+
+  <h3
+    style="
+      color: #739072;
+      font-weight: 500;
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      margin-left: 18px;
+      margin-bottom: 10px;
+    "
+  >
+    Data Informasi
+  </h3>
+
+  
+  <ion-card class="form" style="--i: 1" *ngFor="let data of infoData" >
+    <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-card-content  style="--length: 5" role="list">
+      <div class="content">
+        <img class="icon" src="/assets/image/info (1).png" alt="icon.chat" />
+        <h4 class="name">{{ data.judul_info }}</h4>
+      </div>
+  
+      <h4 class="isi">{{ data.informasi }}</h4>
+      <h4 class="tgl">{{ data.tgl_info }}</h4>
+      <ion-button
+      style="--background: #739072; color: white; width: 68%; text-align: center; border-radius: 10%; margin-right: 28px;"
+      (click)="edit(data.kd_info)"
+      ><i class="bi bi-pencil-square"></i>Edit Data </ion-button
+    >
+    <ion-button class="del" style="--background: white; color:red; width: 18%; text-align: center;"(click)="confirmDelete(data.kd_info)"
+      ><ion-icon name="trash-outline"></ion-icon></ion-button
+    >
+    </ion-card-content>
+  </ion-card>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button style="--background: #739072" routerLink="/t-info">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
