@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import axios, { AxiosResponse, AxiosError } from 'axios'; // Import AxiosResponse dan AxiosError
-import { Observable } from 'rxjs';
-import { Chart } from 'chart.js';
+
 import { Storage } from '@ionic/storage';
 
 @Injectable({
@@ -9,6 +8,7 @@ import { Storage } from '@ionic/storage';
 })
 export class ApiserviceService {
   public uriApi: string = 'https://greenland-foresthill.id/rest-api/index.php/';
+  public fotoApi: string = 'https://greenland-foresthill.id/rest-api/';
 
   constructor(private storage: Storage) {}
 
@@ -369,8 +369,8 @@ export class ApiserviceService {
       // }
 
       const res: AxiosResponse = await axios.get(url);
-
       let data = res.data.result;
+      data.bukti_iuran = this.fotoApi + 'uploads/iuran/' + data.bukti_iuran;
       return {
         msg: 'ok',
         data: data,
@@ -855,6 +855,7 @@ export class ApiserviceService {
 
       let data = res.data.result;
       console.log(data);
+      data.bukti = this.fotoApi + 'uploads/uangPengeluaran/' + data.bukti;
 
       return {
         msg: 'ok',

@@ -19,11 +19,7 @@
     </ion-item>
 
     <ion-title class="edit">Bukti :</ion-title>
-    <ion-item>
-      <ion-input type="text" [(ngModel)]="image"
-        ><span (change)="getFile($event)" class="mt-2" type="file"></span
-      ></ion-input>
-    </ion-item>
+    
     <ion-item>
       <ion-input
         (change)="getFile($event)"
@@ -31,7 +27,9 @@
         type="file"
       ></ion-input>
     </ion-item>
-    
+    <div *ngIf="Data">
+      <img [src]="image" alt="Bukti Iuran" class="image" />
+    </div>
 
      <!-- <div  class="container d-block justify-content-center"
     *ngFor="let data of Data">

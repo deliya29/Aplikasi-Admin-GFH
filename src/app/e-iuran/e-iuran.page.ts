@@ -71,12 +71,13 @@ export class EIuranPage implements OnInit {
       await this.storage.create();
       this._apiService.getIuran().then((res: any) => {
         console.log(res.data);
+        
         if (res.msg == 'ok') {
           this.Data = res.data.filter((item: any) => item.kd_iuran === this.kd_iuran);
           if (this.Data.length > 0) {
-            const dataItem = this.Data[0];
+            const dataItem =  this.Data[0];
             this.kd_iuran = dataItem.kd_iuran;
-            this.image = dataItem.bukti_iuran;
+            this.image = this.getFullImageUrl(dataItem.bukti_iuran);
             this.kd_blok = dataItem.kd_blok;
             this.kd_penduduk = dataItem.kd_penduduk;
             this.jenis = dataItem.jenis_pembayaran;
@@ -105,6 +106,11 @@ export class EIuranPage implements OnInit {
       );
     }
   }
+ // e-iuran.page.ts
+getFullImageUrl(kd_iuran: string): string {
+  return this._apiService.fotoApi + 'uploads/iuran/' + kd_iuran;
+}
+
   
   async Update() {
     if (

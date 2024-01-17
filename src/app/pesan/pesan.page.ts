@@ -193,5 +193,7 @@ export class PesanPage implements OnInit {
 
     await alert.present();
   }
-
+  route(route:string){
+    this.navCtrl.navigateForward(route);
+  }
 }

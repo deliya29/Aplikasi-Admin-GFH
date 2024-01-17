@@ -1,87 +1,172 @@
 ion-content {
-    margin-top: 7%;
-    font-family: sans-serif;
-    --background: #cfe0bf;
-    img {
-      top: none;
-      width: 100%;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 3%;
-    }
-  
-    h1 {
-      margin-top: 2%;
-      margin-bottom: 10px;
-      font-size: 32px;
-      font-weight: 700;
-      font-family: sans-serif;
-    }
-  
-    h3 {
-      color: #8a95a0;
-      font-weight: 600;
-    }
-  
-    .input {
-      font-family: sans-serif;
-      font-weight: 15%;
-      margin-left: 4px;
-    }
-    ion-item {
-      --background: #e2e2e2;
-      border-radius: 10px;
-      margin-bottom: 16px;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.295);
-  
-      ion-input {
-        color: #050505;
-      }
-    }
-  
-    ion-button {
-      top: 8%;
-      height: 6%;
-      --background: #204431;
-      box-shadow: #7d868f;
-      font-family: sans-serif;
-      font-size: 100%;
-      font-weight: bold;
-    }
-  
-    ion-title {
-      font-family: "Poppins" sans-serif;
-      text-align: center;
-    }
-    .footer-text {
-      text-align: center;
-      font-size: 17px;
-      margin-top: 5%;
-      font-family: sans-serif;
-  
-      span {
-        text-decoration: none;
-        font-weight: bold;
-        color: #204431;
-        font-family: sans-serif;
-      }
-      span:hover {
-        color: #8a95a0;
-      }
-    }
-    ion-toggle{
-      font-family: sans-serif;
-      font-weight: bold;
-    }
+  font-family: "Poppins", sans-serif;
+  --background: #f8f8f8;
+  img {
+    height: 250px;
+    height: 250px;
+    margin-top: 10%;
+    color: white;
   }
-  ion-toolbar,
-  ion-footer {
-    --background: #204431;
-    color: #e2e2e2;
+
+  // --background: url('../../assets/Forest.jpg');
+  text-align: center;
+  width: 100vw; /* Gambar akan memiliki lebar sesuai dengan lebar layar */
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.custom-font {
+  font-family: "Consolas", sans-serif;
+}
+
+.title {
+  text-align: center;
+  color: white;
+  font-family: "Nunito";
+
+  h3 {
+    font-family: "Segoe UI";
+    font-size: 20pt;
   }
-  .title-footer {
-    font-size: 15px;
-    text-align: center;
+
+  h5 {
+    font-family: "Segoe UI";
   }
-  
+}
+
+.reg {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+
+  h3 {
+    font-family: "Segoe UI";
+    font-size: 15px; /* Atur ukuran font sesuai kebutuhan Anda */
+  }
+
+  h5 {
+    font-family: "Segoe UI";
+  }
+}
+
+.wrap-input {
+  --background-color: gold; /* Ubah warna latar belakang ke warna gold */
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  box-shadow: 0 10px 30px 0px rgba(0, 145, 255, 0.12);
+}
+
+ion-input {
+  display: block;
+  width: 100%;
+  background: transparent;
+  font-family: "Consolas";
+  font-size: 18px;
+  line-height: 1.5;
+  border: none;
+  outline: none;
+  height: 46px;
+  padding: 0 20px 0 23px;
+}
+
+ion-toolbar {
+  --background: transparent;
+}
+
+.container-form-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.form-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 160px;
+  height: 42px;
+  background-color: #204431;
+  border-radius: 20px;
+  font-size: 18px;
+  color: #fff;
+  text-transform: uppercase;
+  padding-top: 5px;
+  transition: all 0.4s;
+  box-shadow: 0 10px 30px 0px rgba(57, 71, 82, 0.5);
+}
+
+.form-btn:hover {
+  background-color: #28333b;
+  box-shadow: 0 10px 30px 0px rgba(57, 71, 82, 0.8);
+}
+
+.btn {
+  font-size: 18px;
+  color: #204431;
+  text-transform: uppercase;
+}
+
+.powered-by {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(to bottom, #00e51f, #005d2a);
+  color: #fff;
+  padding: 10px 0;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 10%, rgba(255, 255, 255, 0.8), transparent 90%);
+    animation: glitter 7s linear infinite;
+  }
+}
+
+@keyframes glitter {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.info-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 24px;
+  color: linear-gradient(to bottom, #00e51f, #005d2a);
+}
+ion-toolbar,
+ion-footer {
+  --background: #204431;
+  color: #e2e2e2;
+}
+.title-footer {
+  font-size: 15px;
+  text-align: center;
+}

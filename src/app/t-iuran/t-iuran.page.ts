@@ -106,16 +106,16 @@ export class TIuranPage implements OnInit {
 
   async Insert() {
     if (
-      this.image == null ||
-      this.image == undefined ||
+      // this.image == null ||
+      // this.image == undefined ||
       this.kd_blok == '' ||
       this.kd_penduduk == '' ||
       this.jenis == '' ||
       this.ket == '' ||
       this.tgl == '' ||
       this.tahun == '' ||
-      this.bulan == '' ||
-      this.status == '' 
+      this.bulan == '' 
+      //this.status == '' 
     ) {
       this.presentToast(
         'Tidak boleh ada form yang kosong, harap isi semua form!',
@@ -138,8 +138,10 @@ export class TIuranPage implements OnInit {
       formData.append('kas_tahun', this.tahun);
       formData.append('kas_bulan', this.bulan);
       formData.append('status', this.status);
-      formData.append('iuran_foto', this.image);
-  
+      // formData.append('iuran_foto', this.image);
+      if (this.image) {
+        formData.append('iuran_foto', this.image);
+      }
       this._apiService.createIuran(formData).then((res) => {
         if (res.msg == 'ok') {
           this.loadingCtrl.dismiss();

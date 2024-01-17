@@ -78,8 +78,8 @@ export class TUangPage implements OnInit {
 
   async Insert() {
     if (
-      this.image == null ||
-      this.image == undefined ||
+      // this.image == null ||
+      // this.image == undefined ||
       this.kd_pengeluaran == '' ||
       this.keterangan== '' ||
       this.tanggal_keluar == '' 
@@ -101,8 +101,10 @@ export class TUangPage implements OnInit {
       formData.append('kd_pengeluaran', this.kd_pengeluaran);
       formData.append('keterangan', this.keterangan);
       formData.append('tanggal_keluar', this.tanggal_keluar);
-      formData.append('pengeluaran_foto', this.image);
-  
+      // formData.append('pengeluaran_foto', this.image);
+      if (this.image) {
+        formData.append('pengeluaran_foto', this.image);
+      }
       this._apiService.createUang(formData).then((res) => {
         if (res.msg == 'ok') {
           this.loadingCtrl.dismiss();

@@ -233,6 +233,9 @@ export class UangKeluarPage implements OnInit {
 
     await alert.present();
   }
+  route(route:string){
+    this.navCtrl.navigateForward(route);
+  }
 
   ngOnInit() {}
 }

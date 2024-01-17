@@ -5,6 +5,20 @@
     </ion-buttons>
 
     <ion-buttons slot="end">
+      
+      <ion-button  (click)="logout()">
+        <ion-icon name="log-in-outline" style="color: white; font-size: 27px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
       <ion-title
         style="
           color: white;
@@ -20,7 +34,7 @@
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 <ion-content [fullscreen]="true" class="bg">
   <div id="header">
     <h3 style="font-family: 'Poppins', sans-serif">ADMIN RT.05</h3>

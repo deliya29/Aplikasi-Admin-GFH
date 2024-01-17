@@ -183,6 +183,9 @@ export class SuratMasukPage implements OnInit {
 
     await alert.present();
   }
+  route(route:string){
+    this.navCtrl.navigateForward(route);
+  }
 
   ngOnInit() {
   }

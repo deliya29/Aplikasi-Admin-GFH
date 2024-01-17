@@ -21,14 +21,15 @@ export class LoginPage implements OnInit {
   hideShowPassword() {
     this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
     this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
-  }
+}
 
   constructor(
     private toastCtrl: ToastController,
     private _apiService: ApiserviceService,
     private loadingCtrl: LoadingController,
-    private navCtrl: NavController
+    private navCtrl: NavController,
   ) {}
+
 
   async presentToast(msg: any, color: any, icon: any) {
     const toast = await this.toastCtrl.create({
@@ -48,48 +49,33 @@ export class LoginPage implements OnInit {
 
   async login() {
     if (this.username == '' || this.password == '') {
-      this.presentToast(
-        'Username or password empty',
-        'danger',
-        'alert-circle-outline'
-      );
+      this.presentToast('Username or password empty', 'danger', "alert-circle-outline");
       this.default();
     } else {
       const loader = await this.loadingCtrl.create({
         message: 'Please wait...',
-        spinner: 'lines',
+        spinner: "lines",
       });
       loader.present();
+      console.log(this.username, this.password)
       this._apiService.login(this.username, this.password).then((res) => {
         if (res == 'success') {
           loader.dismiss();
           this.navCtrl.navigateRoot(['/penduduk']);
-          this.presentToast(
-            'Login Success...',
-            'success',
-            'checkmark-circle-outline'
-          );
+          this.presentToast('Login Success...', 'success', "checkmark-circle-outline");
         } else if (res == 'notFound') {
           loader.dismiss();
-          this.presentToast(
-            'Account not found !',
-            'danger',
-            'alert-circle-outline'
-          );
+          this.presentToast('Account not found !', 'danger', "alert-circle-outline");
         } else if (res == 'err') {
           loader.dismiss();
-          this.presentToast(
-            'Something went wrong !',
-            'danger',
-            'alert-circle-outline'
-          );
+          this.presentToast('Something went wrong !', 'danger', "alert-circle-outline");
         }
         this.default();
       });
     }
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {}
   async register() {
     this.navCtrl.navigateRoot(['/register']);
-  }
+  }
 }

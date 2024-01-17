@@ -71,7 +71,7 @@ export class EUangPage implements OnInit {
           if (this.Data.length > 0) {
             const dataItem = this.Data[0];
             this.kd_keluar = dataItem.kd_keluar;
-            this.image = dataItem.bukti;
+            this.image = this.getFullImageUrl(dataItem.bukti);
             this.kd_pengeluaran = dataItem.kd_pengeluaran;
             this.keterangan = dataItem.keterangan;
             this.tanggal_keluar = dataItem.tanggal_keluar;
@@ -94,6 +94,9 @@ export class EUangPage implements OnInit {
         'alert-circle-outline'
       );
     }
+  }
+  getFullImageUrl(kd_keluar: string): string {
+    return this._apiService.fotoApi + 'uploads/uangPengeluaran/' + kd_keluar;
   }
   
   async Update() {

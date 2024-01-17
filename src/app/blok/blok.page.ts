@@ -21,6 +21,7 @@ export class BlokPage implements OnInit {
 
   public blokData: any;
   public searchNumber: string = '';
+  alertController: AlertController;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -31,6 +32,7 @@ export class BlokPage implements OnInit {
     private alertCtrl: AlertController
   ) {
     this.getBlokData();
+    this.alertController = alertCtrl;
   }
 
   ngOnInit() {
@@ -170,6 +172,34 @@ export class BlokPage implements OnInit {
       this.presentToast('Error: ' + err.err, 'danger', 'alert-circle-outline');
     }
   }
-  
+  async logout() {
+    const alert = await this.alertController.create({
+      header: 'Konfirmasi',
+      message: 'Apakah Anda yakin ingin keluar dari aplikasi?',
+      buttons: [
+        {
+          text: 'No',
+          role: 'cancel',
+          handler: () => {
+            // Batal
+          },
+        },
+        {
+          text: 'Yes',
+          handler: () => {
+            // Logout dan navigasi ke halaman login
+            this.storage.remove('isLoggedIn');
+            localStorage.removeItem('isLoggedIn');
+            this.navCtrl.navigateRoot('/login');
+          },
+        },
+      ],
+    });
+
+    await alert.present();
+  }
+  route(route:string){
+    this.navCtrl.navigateForward(route);
+  }
 }
 

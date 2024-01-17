@@ -20,33 +20,33 @@
 
     <ion-title class="edit">Jenis Pembayaran :</ion-title>
     <ion-item>
-      <ion-input type="text" [(ngModel)]="jenis" readonly></ion-input>
+      <ion-input type="text" [(ngModel)]="jenis" ></ion-input>
     </ion-item>
 
     <ion-title class="edit">Keterangan :</ion-title>
     <ion-item>
-      <ion-input type="text" [(ngModel)]="ket" readonly></ion-input>
+      <ion-input type="text" [(ngModel)]="ket" ></ion-input>
     </ion-item>
 
     <ion-title class="edit">Tanggal Pembayaran :</ion-title>
     <ion-item>
-      <ion-input type="text" [(ngModel)]="tgl" readonly></ion-input>
+      <ion-input type="text" [(ngModel)]="tgl" ></ion-input>
     </ion-item>
 
     <ion-title class="edit">Tahun Pembayaran :</ion-title>
     <ion-item>
-      <ion-input type="text" [(ngModel)]="tahun" readonly></ion-input>
+      <ion-input type="text" [(ngModel)]="tahun" ></ion-input>
     </ion-item>
 
     <ion-title class="edit">Bulan Pembayaran :</ion-title>
     <ion-item>
-      <ion-input type="text" [(ngModel)]="bulan" readonly></ion-input>
+      <ion-input type="text" [(ngModel)]="bulan" ></ion-input>
     </ion-item>
 
     <ion-title class="edit">Bukti Pembayaran :</ion-title>
-    <ion-item>
+    <!-- <ion-item>
       <ion-input type="text" [(ngModel)]="image" readonly></ion-input>
-    </ion-item>
+    </ion-item> -->
     <ion-item>
       <ion-input
         (change)="getFile($event)"
@@ -54,7 +54,12 @@
         type="file"
       ></ion-input>
     </ion-item>
+   <!-- e-iuran.page.html -->
+<div *ngIf="Data">
+  <img [src]="image" alt="Bukti Iuran" class="image" />
+</div>
 
+    
     <ion-title class="edit">Status Pembayaran :</ion-title>
     <ion-item>
       <ion-input type="text" [(ngModel)]="status"></ion-input>

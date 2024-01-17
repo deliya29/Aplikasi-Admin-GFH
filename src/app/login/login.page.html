@@ -1,29 +1,31 @@
-<ion-content class="ion-padding">
-  <img src="/assets/image/vektor1.png" alt="" />
-  <h1>Login,</h1>
-  <h3>Sign in to continue!</h3>
-
-  <ion-item>
-    <ion-icon name="person"></ion-icon>
-    <ion-input [(ngModel)]="username" placeholder="Masukan Nik" class="input" />
-  </ion-item>
-  <ion-item>
-    <ion-icon name="lock-closed"></ion-icon>
-    <ion-input
-      [(ngModel)]="password"
-      class="form-control p-2 py-0"
-      placeholder="Masukan Password"
-      [type]="passwordType"
-      clearOnEdit="false"
-      required
-      class="input"
-    />
-  </ion-item>
-  <ion-toggle [enableOnOffLabels]="true" (click)="hideShowPassword()"  color="success">View Password</ion-toggle>
-  <ion-button expand="block" shape="round" (click)="login()">Masuk</ion-button>
-  <!-- <p class="footer-text">
-    Don't have account?, <span (click)="register()">Sign Up</span>
-  </p> -->
+<ion-content>
+  <!-- <div class="info-icon">
+    <ion-icon name="information-circle-outline"></ion-icon>
+  </div> -->
+  <div class="rounded-container">
+    <div class="logo">
+      <img src="../../assets/image/green.png" />
+    </div>
+    <ion-item class="wrap-input">
+      <ion-input [(ngModel)]="username" placeholder="Masukan Username"></ion-input>
+      <!-- Jika ingin menampilkan ikon checkmark, bisa diatur sesuai kebutuhan -->
+      <!-- <ion-icon slot="end" color="success" name="checkmark-circle-outline"></ion-icon> -->
+    </ion-item>
+    <ion-item class="wrap-input">
+      <ion-input [(ngModel)]="password" [type]="passwordType" placeholder="Masukan Password"></ion-input>
+      <ion-icon slot="end" color="success" name="{{ passwordIcon }}" (click)="hideShowPassword()"></ion-icon>
+    </ion-item>
+    <!-- <div class="reg">
+      <h5>Doesn't have an account? <b class="btn"><u><a (click)="register()">Register</a></u></b></h5>
+    </div> -->
+    
+    <div class="container-form-btn">
+      <button (click)="login()" class="form-btn custom-font"><b>Login</b></button>
+    </div>
+  </div>
+  <!-- <div class="powered-by">
+    "Home Sweet Home"
+  </div> -->
 </ion-content>
 <ion-footer>
   <ion-toolbar>
